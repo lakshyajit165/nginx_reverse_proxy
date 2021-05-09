@@ -1,5 +1,14 @@
 version: "3.8"
 services:
+    client:
+        build:
+            context: ./client
+        ports:
+            - "4200:4200"
+        container_name: client
+        depends_on:
+            [server1, server2]
+
     server1:
         build:
             context: ./server1

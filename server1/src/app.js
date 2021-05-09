@@ -1,5 +1,7 @@
 const express = require('express');
 const app = express();
+const cors = require("cors");
+app.use(cors());
 app.get('/', (req, res) => {
   return res.status(200).send({ "message": "Response from server1!" });
 });
