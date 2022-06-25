@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: server1-deployment
+spec:
+    replicas: 3
+    selector:
+        matchLabels:
+            component: server1
+    template:
+        metadata:
+            labels:
+                component: server1 # should match the selector above
+        spec:
+            containers:
+                - name: server1 # this is the name of the container we wish to keep
+                  image: lakshyajit165/k8s_demo_server1
+                  ports:
+                      - containerPort: 5001
