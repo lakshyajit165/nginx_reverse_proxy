@@ -9,13 +9,13 @@ export class DataService {
   constructor(
     private http: HttpClient,
   ) { }
-  api: string = 'http://localhost:8080/';
+  // api: string = 'http://localhost:8080/';
 
   getServer1Data(): Observable<object> {
-    return this.http.get(this.api + 'server1/');
+    return this.http.get('/server1/');
   }
 
   getServer2Data(): Observable<object> {
-    return this.http.get(this.api + 'server2/');
+    return this.http.get('/server2/');
   }
 }

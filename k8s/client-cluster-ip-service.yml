@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+    name: client-cluster-ip-service
+spec:
+    type: ClusterIP
+    selector:
+        component: web
+    ports:
+        - port: 4200 # port with which other objects can communicate with the multi-client pods "inside" the cluster
+          targetPort: 4200 # port which the server running in the pod exposes

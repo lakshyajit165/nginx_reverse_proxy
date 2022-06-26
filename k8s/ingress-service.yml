@@ -11,6 +11,13 @@ spec:
     rules:
         - http:
               paths:
+                  - path: /?(.*)
+                    pathType: Prefix
+                    backend:
+                        service:
+                            name: client-cluster-ip-service
+                            port:
+                                number: 4200
                   - path: /server1/?(.*)
                     pathType: Prefix
                     backend:
