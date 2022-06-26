@@ -15,5 +15,6 @@ spec:
             containers:
                 - name: client
                   image: lakshyajit165/k8s_demo_client
+                  imagePullPolicy: Always
                   ports:
                       - containerPort: 4200

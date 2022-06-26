@@ -15,5 +15,6 @@ spec:
             containers:
                 - name: server1 # this is the name of the container we wish to keep
                   image: lakshyajit165/k8s_demo_server1
+                  imagePullPolicy: Always
                   ports:
                       - containerPort: 5001
